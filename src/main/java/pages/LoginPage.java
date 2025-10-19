@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
-    public LoginPage (WebDriver driver){
+    public LoginPage(WebDriver driver) {
         setDriver(driver);
         PageFactory.initElements(new AjaxElementLocatorFactory
                 (driver, 10), this);
@@ -21,12 +21,16 @@ public class LoginPage extends BasePage{
     WebElement inputPassword;
 
     @FindBy(css = "button[type='submit']")
-    WebDriver btnYalla;
+    WebElement btnYalla;
 
-    public void typeLoginForm(String email, String password){
+    @FindBy(css = "button[class='positive-button ng-star-inserted']")
+    WebElement btnOk;
+
+    public void typeLoginForm(String email, String password) {
         inputEmail.sendKeys(email);
         inputPassword.sendKeys(password);
-
+        btnYalla.click();
+        btnOk.click();
     }
 
 
