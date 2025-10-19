@@ -1,6 +1,8 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
@@ -14,6 +16,11 @@ public class HomePage extends BasePage {
         ), this);
     }
 
+    @FindBy(css = "a[href='/login?url=%2Fsearch']")
+    WebElement  btnLoginHeader;
 
+   public void clickBtnLoginHeader (){
+       btnLoginHeader.click();
+   }
 
 }
