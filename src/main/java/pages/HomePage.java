@@ -17,10 +17,17 @@ public class HomePage extends BasePage {
     }
 
     @FindBy(css = "a[href='/login?url=%2Fsearch']")
-    WebElement  btnLoginHeader;
+    WebElement btnLoginHeader;
 
-   public void clickBtnLoginHeader (){
-       btnLoginHeader.click();
-   }
+    @FindBy(css = "a[href='/registration?url=%2Fsearch']")
+    WebElement btnSingUpHeader;
+
+    public void clickBtnLoginHeader() {
+        btnLoginHeader.click();
+    }
+
+    public void clickBtnSingUpHeader(){
+        btnSingUpHeader.click();
+    }
 
 }

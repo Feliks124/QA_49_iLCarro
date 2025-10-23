@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 
-public class LoginTest extends ApplicationManager {
+public class LoginTests extends ApplicationManager {
 
     @Test
     public void loginPositiveTest() {
@@ -40,6 +40,8 @@ public class LoginTest extends ApplicationManager {
         loginPage.typeLoginFormWithUser(user);
         Assert.assertTrue(loginPage.isLoggedIncorrect());
     }
+
+
 
 
 }
