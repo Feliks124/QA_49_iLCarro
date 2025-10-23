@@ -27,6 +27,21 @@ public class LoginPage extends BasePage {
     @FindBy(css = "button[class='positive-button ng-star-inserted']")
     WebElement btnOk;
 
+    @FindBy(xpath = "//h2[contains(text(),'Login or Password incorrect')]")
+    WebElement popUpTextLoggedIncorrect;
+
+    @FindBy(xpath = "//h2[text()='Logged in success']")
+    WebElement popUpTextLoggedSuccess;
+
+
+    public boolean isLoggedDisplayed(){
+        return elementIsDisplayed(popUpTextLoggedSuccess);
+    }
+
+    public boolean isLoggedIncorrect(){
+        return elementIsDisplayed(popUpTextLoggedIncorrect);
+    }
+
     public void typeLoginForm(String email, String password) {
         inputEmail.sendKeys(email);
         inputPassword.sendKeys(password);
@@ -38,7 +53,6 @@ public class LoginPage extends BasePage {
         inputEmail.sendKeys(user.getUsername());
         inputPassword.sendKeys(user.getPassword());
         btnYalla.click();
-
     }
 
 
